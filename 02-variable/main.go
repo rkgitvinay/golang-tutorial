@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-const LoginToken string = "login-token" // public variable
+const LoginToken string = "login-token" // public variable starts with Capital letter
 
 func main() {
 	var username string = "Vinay"
@@ -90,5 +90,16 @@ func main() {
 	}
 
 	fmt.Println("========= Starting Structs =========")
+	// No inheritance in golang, No Super, parent or child thing in go
+	vinay := User{"Vinay", "vinay@gmail.com", true, 25}
+	fmt.Println(vinay)
+	fmt.Printf("Vinay details are: %+v\n", vinay)
+	fmt.Printf("Vinay details are: Name: %v, Email: %v\n", vinay.Name, vinay.Email)
+}
 
+type User struct {
+	Name   string
+	Email  string
+	Status bool
+	Age    int
 }
